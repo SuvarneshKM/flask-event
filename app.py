@@ -31,19 +31,21 @@ def game():
 @app.route('/api/send', methods=['POST'])
 def send():
 	request_data = request.get_json()
-	name = request_data['name']
-	email = request_data['email']
-	phone = request_data['phone']
-	semester = request_data['semester']
-	branch = request_data['branch']
-	print('name : ' + name)
-	print('email : ' + email)
-	print('phone : ' + phone)
-	print('semester : ' + semester)
-	print('branch : ' + branch)
-	emailMsg = 'Remember ' + name + ' Rafikka Uyir'
+	print(request_data)
+	# name = request_data['name']
+	# email = request_data['email']
+	# phone = request_data['phone']
+	# semester = request_data['semester']
+	# branch = request_data['branch']
+	# print('name : ' + name)
+	# print('email : ' + email)
+	# print('phone : ' + phone)
+	# print('semester : ' + semester)
+	# print('branch : ' + branch)
+	# emailMsg = 'Remember ' + name + ' Rafikka Uyir'
+	emailMsg = 'Remember suvarnesh Rafikka Uyir'
 	mimeMessage = MIMEMultipart()
-	mimeMessage['to'] = email
+	mimeMessage['to'] = 'suvarnesh1729@gmail.com'
 	mimeMessage['subject'] = 'Rafikka Uyir'
 	mimeMessage.attach(MIMEText(emailMsg, 'plain'))
 	raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
