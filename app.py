@@ -40,7 +40,7 @@ def game():
 	return {
 	'game': 'passed'
 	}
-
+ 
 @app.route('/api/send', methods=['POST'])
 def send():
 	request_data = request.get_json()
