@@ -33,7 +33,7 @@ def send():
 	request_data = request.get_json()
 	print(request_data)
 	# name = request_data['name']
-	# email = request_data['email']
+	email = request_data['email']
 	# phone = request_data['phone']
 	# semester = request_data['semester']
 	# branch = request_data['branch']
@@ -45,7 +45,7 @@ def send():
 	# emailMsg = 'Remember ' + name + ' Rafikka Uyir'
 	emailMsg = 'Remember suvarnesh Rafikka Uyir'
 	mimeMessage = MIMEMultipart()
-	mimeMessage['to'] = 'suvarnesh1729@gmail.com'
+	mimeMessage['to'] = email
 	mimeMessage['subject'] = 'Rafikka Uyir'
 	mimeMessage.attach(MIMEText(emailMsg, 'plain'))
 	raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
