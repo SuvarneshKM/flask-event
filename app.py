@@ -22,6 +22,19 @@ def index():
 		'name': 'Hello World'
 	}
 
+@app.route('/json-example', methods=['POST'])
+def json_example():
+    request_data = request.get_json()
+
+    language = request_data['language']
+    framework = request_data['framework']
+    boolean_test = request_data['boolean_test']
+
+    return '''
+           The language value is: {}
+           The framework value is: {}
+           The boolean value is: {}'''.format(language, framework, boolean_test)
+
 @app.route('/api/game', methods=['POST'])
 def game():
 	return {
@@ -32,8 +45,8 @@ def game():
 def send():
 	request_data = request.get_json()
 	print(request_data)
-	# name = request_data['name']
-	email = request_data['email']
+	name = request_data['name']
+	# email = request_data['email']
 	# phone = request_data['phone']
 	# semester = request_data['semester']
 	# branch = request_data['branch']
@@ -43,9 +56,9 @@ def send():
 	# print('semester : ' + semester)
 	# print('branch : ' + branch)
 	# emailMsg = 'Remember ' + name + ' Rafikka Uyir'
-	emailMsg = 'Remember suvarnesh Rafikka Uyir'
+	emailMsg = 'Remember ' + name + ' Rafikka Uyir'
 	mimeMessage = MIMEMultipart()
-	mimeMessage['to'] = email
+	mimeMessage['to'] = 'suvarnesh1729@gmail.com'
 	mimeMessage['subject'] = 'Rafikka Uyir'
 	mimeMessage.attach(MIMEText(emailMsg, 'plain'))
 	raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
