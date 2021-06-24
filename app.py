@@ -22,6 +22,12 @@ def index():
 		'name': 'Hello World'
 	}
 
+@app.route('/api/game', methods=['POST'])
+def game():
+	return {
+	'game': 'passed'
+	}
+
 @app.route('/api/send', methods=['POST'])
 def send():
 	request_data = request.get_json()
