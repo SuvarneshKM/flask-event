@@ -47,15 +47,9 @@ def send():
 	print(request_data)
 	name = request_data['name']
 	email = request_data['email']
-	# phone = request_data['phone']
-	# semester = request_data['semester']
-	# branch = request_data['branch']
-	# print('name : ' + name)
-	# print('email : ' + email)
-	# print('phone : ' + phone)
-	# print('semester : ' + semester)
-	# print('branch : ' + branch)
-	# emailMsg = 'Remember ' + name + ' Rafikka Uyir'
+	phone = request_data['phone']
+	semester = request_data['semester']
+	branch = request_data['branch']
 	emailMsg = 'Remember ' + name + ' Rafikka Uyir'
 	mimeMessage = MIMEMultipart()
 	mimeMessage['to'] = email
