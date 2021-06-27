@@ -3,9 +3,12 @@ from Google import Create_Service
 import base64
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from flask_cors import CORS, cross_origin
+
 
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 
 CLIENT_SECRET_FILE = 'client_secret_id.json'
@@ -23,6 +26,7 @@ def index():
 	}
 
 @app.route('/json-example', methods=['POST'])
+@cross_origin(supports_credentials=True)
 def json_example():
     request_data = request.get_json()
 
