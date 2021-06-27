@@ -16,7 +16,7 @@ SCOPES = ['https://mail.google.com/']
 service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
  
 
-@app.route('/api', methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
 	return {
 		'name': 'Hello World'
